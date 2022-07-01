@@ -32,7 +32,9 @@
 .fileshow-box{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 30px;
+  gap: 20px;
 }
 
 .fileshow-card-borderOn{
@@ -43,6 +45,7 @@
 }
 
 .fileshow-card-borderOn img{
-  width: 100%;
+  width: 200px;
+  height: 200px;
   border-radius: 0.7rem;
 }

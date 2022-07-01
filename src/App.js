@@ -8,6 +8,7 @@ let addedFiles = [];
 
 function App() {
   const [fileUrl, updateFileUrl] = useState(``)
+
   async function onChange(e) {
     console.log("ok")
     const file = e.target.files[0]
@@ -20,6 +21,13 @@ function App() {
       console.log('Error uploading file: ', error)
     }  
   }
+
+  const listItems = addedFiles.map((addedFile =>
+    <div className='fileshow-card-borderOn'>
+      <img src={"https://ipfs.infura.io/ipfs/" + addedFile["path"]} alt="uploadedIMG"/>
+    </div>)
+  );
+
   return (
     <div className="container">
       <h1 className='header'>File upload to IPFS</h1>
@@ -29,15 +37,13 @@ function App() {
               Upload 
           </label>
           <div className='imgUrl-show'>
-            {fileUrl && ("https://ipfs.infura.io/ipfs/" + fileUrl)}
+            {fileUrl && (fileUrl)}
           </div>
       </div>
       <div className="fileshow-box">
         {
           fileUrl && (
-            <div className='fileshow-card-borderOn'>
-              <img src={fileUrl} alt="uploadedIMG"/>
-              </div>  
+            listItems
           )
         }
       </div>
