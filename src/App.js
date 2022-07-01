@@ -1,7 +1,6 @@
 import './App.css'
 import { useState } from 'react'
 import { create } from 'ipfs-http-client'
-import 'bootstrap/dist/css/bootstrap.css';
 
 const client = create('https://ipfs.infura.io:5001/api/v0')
 
@@ -10,6 +9,7 @@ let addedFiles = [];
 function App() {
   const [fileUrl, updateFileUrl] = useState(``)
   async function onChange(e) {
+    console.log("ok")
     const file = e.target.files[0]
     try {
       const added = await client.add(file)
@@ -20,20 +20,24 @@ function App() {
       console.log('Error uploading file: ', error)
     }  
   }
-  console.log(addedFiles)
   return (
     <div className="container">
-      <h1 className='mt-4'>File upload to IPFS</h1>
-      <div>
-          <label onChange={onChange} htmlFor="formId" className='uploadForm mt-4'>
+      <h1 className='header'>File upload to IPFS</h1>
+      <div className='ipfsUploadsection'>
+          <label onChange={onChange} htmlFor="formId" className='uploadForm'>
               <input name="" type="file" id="formId"  hidden />
-              Upload
+              Upload 
           </label>
+          <div className='imgUrl-show'>
+            {fileUrl && ("https://ipfs.infura.io/ipfs/" + fileUrl)}
+          </div>
       </div>
-      <div class>
+      <div className="fileshow-box">
         {
           fileUrl && (
-            <img src={fileUrl} alt="uploadedIMG"/>
+            <div className='fileshow-card-borderOn'>
+              <img src={fileUrl} alt="uploadedIMG"/>
+              </div>  
           )
         }
       </div>
