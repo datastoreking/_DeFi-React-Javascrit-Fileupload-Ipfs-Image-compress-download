@@ -23,17 +23,20 @@ function App() {
   console.log(addedFiles)
   return (
     <div className="container">
-      <h1 className='mt-4'>IPFS Upload</h1>
-      <input
-        type="file"
-        onChange={onChange}
-        className="uploadForm"
-      />
-      {
-        fileUrl && (
-          <img src={fileUrl} width="100px" height="100px" alt="uploaded Image"/>
-        )
-      }
+      <h1 className='mt-4'>File upload to IPFS</h1>
+      <div>
+          <label onChange={onChange} htmlFor="formId" className='uploadForm mt-4'>
+              <input name="" type="file" id="formId"  hidden />
+              Upload
+          </label>
+      </div>
+      <div class>
+        {
+          fileUrl && (
+            <img src={fileUrl} alt="uploadedIMG"/>
+          )
+        }
+      </div>
     </div>
   );
 }

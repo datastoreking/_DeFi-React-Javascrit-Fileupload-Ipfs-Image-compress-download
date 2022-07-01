@@ -1,4 +1,19 @@
-.uploadForm{
-  display: block;
-  margin-bottom: 50px;
+.container h1{
+  color: #9387f9;
 }
+
+.uploadForm{
+  width: 200px;
+  text-align: center;
+  border: 1px solid #9387f9;
+  cursor: pointer;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: #9387f9;
+}
+ 
+.uploadForm:hover{
+  background-color: #9387f9;
+  color: white;
+  transition: 0.3s;
+} 
