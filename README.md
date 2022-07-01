@@ -11,7 +11,8 @@ The languages ​​used here (javascript, html and css) apply to any web server
 npm install
 npm run start
 ```
-
+Run localhost:3000 on browser
+All done!!!
 
 # Online Demo
 You can access the same at this link. It's the same code, hosted by Github Pages
