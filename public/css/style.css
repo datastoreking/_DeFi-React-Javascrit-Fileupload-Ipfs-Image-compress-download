@@ -27,12 +27,17 @@ html, body {
 	width: 100%;
 }
 
+#wrapper-reducer{
+	text-align: center;
+}
+
 #left {
 	width: 400px;
 }
 
 #right {
 	width: 400px;
+	margin-top: 50px;
 }
 
 nav {
@@ -321,7 +326,7 @@ h1 {
 .imgSizeBox{
 	padding: 1rem;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     background-color: #a7a7a72e;
     color: #50a2ab;
 }
@@ -347,13 +352,13 @@ h1 {
 }
 
 .downloadbtn{
+	margin-top: 50px;
 	cursor: pointer;
-	width: 150px;
-	padding: 0.5rem;
-	background:none;
-	border-radius: 5px;
-	border:1px solid #34923f;
-	color: #666666;
+	background: none;
+    border: none;
+    background-color: #349906;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 .downloadbtn:hover {
@@ -373,8 +378,18 @@ h1 {
 }
 
 #imageUploadforReduce canvas{
-	margin-top: 40px;
-    width: 100px;
-    height: 100px;
+	margin-top: 50px;
+	width: 200px;
+	height: 70px;
 }
 
+#download{
+    border: none;
+    background: none;
+    padding: 0;
+	color: white;
+}
+
+#imageUploadforReduce{
+	margin-top: 40px;
+}

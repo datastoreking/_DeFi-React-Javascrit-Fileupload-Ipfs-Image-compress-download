@@ -1,4 +1,4 @@
-const MIME_TYPE = "image/jpeg/png";
+const MIME_TYPE = "image/png";
 const QUALITY = 0.7;
 
 const input = document.getElementById("img-input");
@@ -6,7 +6,9 @@ input.onchange = function (ev) {
   const MAX_WIDTH = document.getElementById("widthSize").value;
   const MAX_HEIGHT = document.getElementById("heightSize").value;
   const file = ev.target.files[0]; // get the file
+  console.log(file)
   const blobURL = URL.createObjectURL(file);
+  console.log(blobURL)
   const img = new Image();
   img.src = blobURL;
   img.onerror = function () {
@@ -20,6 +22,8 @@ input.onchange = function (ev) {
     const canvas = document.createElement("canvas");
     canvas.width = newWidth;
     canvas.height = newHeight;
+    canvas.id = "myCanvas";
+    console.log(canvas.width, canvas.height, canvas.id)
     const ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0, newWidth, newHeight);
     canvas.toBlob(
@@ -68,3 +72,11 @@ function readableBytes(bytes) {
 
   return (bytes / Math.pow(1024, i)).toFixed(2) + ' ' + sizes[i];
 }
+
+function download() {
+  var download = document.getElementById("download");
+  download.download = "download.png"
+  var image = document.getElementById("myCanvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
+  download.setAttribute("href", image);
+  console.log(download)
+  }
