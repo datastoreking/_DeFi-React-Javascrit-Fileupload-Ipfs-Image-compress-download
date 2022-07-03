@@ -14,14 +14,10 @@ npm run start
 Run localhost:3000 on browser
 All done!!!
 
-# Online Demo
-You can access the same at this link. It's the same code, hosted by Github Pages
+# Image Compressor
+    You can change the width, height of any images into any width, height you want
+    After changing the image size, download it!!!
 
-If you decide to use an IPFS node running locally, remember to set Cors correctly.
 
-Otherwise, you will have permission errors in the requests.
-
-Installing and running (node ​​js):
-First resolve the dependencies (git, npm and node js)
 
 

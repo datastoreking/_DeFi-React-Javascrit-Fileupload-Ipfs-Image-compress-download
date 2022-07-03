@@ -26,11 +26,12 @@ input.onchange = function (ev) {
     console.log(canvas.width, canvas.height, canvas.id)
     const ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0, newWidth, newHeight);
+    console.log(img.width)
     canvas.toBlob(
       (blob) => {
         // Handle the compressed image. es. upload or save in local state
-        displayInfo('Original file', file);
-        displayInfo('Compressed file', blob);
+        displayInfo('Original file size:', img.width, img.height);
+        displayInfo('Compressed file size', newWidth, newHeight);
       },
       MIME_TYPE,
       QUALITY
@@ -60,9 +61,9 @@ function calculateSize(img, maxWidth, maxHeight) {
 
 // Utility functions for demo purpose
 
-function displayInfo(label, file) {
+function displayInfo(label, w, h) {
   const p = document.createElement('p');
-  p.innerText = `${label} - ${readableBytes(file.size)}`;
+  p.innerText = `${label} - Width: ${w} Height: ${h}`;
   document.getElementById('imageUploadforReduce').append(p);
 }
 
