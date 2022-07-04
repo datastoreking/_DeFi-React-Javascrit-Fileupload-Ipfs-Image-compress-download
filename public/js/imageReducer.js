@@ -98,3 +98,10 @@ function download(canvasID) {
   Tag[0].setAttribute("href", imageLink);
   changeHtmlElementId(canvasID);
   }
+
+function reset () {
+  var sidemenu = document.getElementById('imageUploadforReduce');
+  while (sidemenu.children.length > 1) {
+      sidemenu.removeChild(sidemenu.lastChild);
+  }
+}
