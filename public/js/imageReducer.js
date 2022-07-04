@@ -105,3 +105,16 @@ function reset () {
       sidemenu.removeChild(sidemenu.lastChild);
   }
 }
+
+$(document).ready(function(){
+  $("#nodeStatus").click(function(){
+    if($("#nodeStatus").text() == "Hide Node Status"){
+      $("#right").hide();
+      $("#nodeStatus").text("Show Node Status");
+    }
+    else{
+      $("#right").show();
+      $("#nodeStatus").text("Hide Node Status");
+    }
+  });
+});

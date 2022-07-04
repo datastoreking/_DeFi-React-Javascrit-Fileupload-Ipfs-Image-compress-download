@@ -14,7 +14,7 @@
 	height: 60px;
 	vertical-align: middle;
 	text-align: center;
-	fill: #92b0b3;
+	fill: #ffffff;
 }
 
 .box_file {
@@ -30,8 +30,9 @@
 
 #fileDropBox label:hover,
 #fileDropBox label:focus {
-	background: #207ab6;
+	background-color: #1fb163;
 	cursor: pointer;
+	font-weight: 500;
 }
 
 input[type='file'] {
@@ -39,23 +40,23 @@ input[type='file'] {
 }
 
 #fileDropBox label {
-	background-color: #58b572;
-	color: #fff;
-	margin: 10px;
-	padding: 6px 20px;
-	font-size: 1rem;
-	text-transform: uppercase;
-	letter-spacing: .1em;
-	border-radius: .2em;
+	border: 1px solid white;
+    border-radius: 30px;
+    color: #fff;
+    margin: 10px;
+    padding: 6px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .box_button {
 	border: 0;
 	border-radius: 5px;
 	outline: none;
-	padding: 10px;
+	padding: 20px;
 	font-size: 1rem;
-	width: 9rem;
+	width: 100%;
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	background-color: #3498db;
@@ -64,6 +65,7 @@ input[type='file'] {
 	-webkit-appearance: none;
 	box-shadow: 0 2px 5px 2px rgba(19, 35, 47, 0.3);
 	font-weight: bold;
+	margin-top: 15px;
 }
 
 .box_button img {
@@ -84,7 +86,7 @@ input[type='file'] {
 
 #list {
 	max-height: 400px;
-    margin-top: 30px;
+    margin-top: 5px;
     overflow: auto;
     width: 100%;
 }
@@ -99,11 +101,10 @@ input[type='file'] {
 #list li {
 	margin-top: 5px;
     background-color: #ffffff;
-    border: 1px solid #acd1c6;
     padding: 5px 0px 6px 8px;
     word-wrap: break-word;
     font-size: 14px;
-    border-radius: 6px;
+	border-bottom: 1px solid rgb(192, 192, 192);
 }
 
 #list .uploaded {

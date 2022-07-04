@@ -86,6 +86,7 @@ function offline (selectedNode) {
 }
 
 function upload() {
+  
   if (!connected) {
     alert ("Connect to node First!")
     return
@@ -94,6 +95,7 @@ function upload() {
       alert("<p>At least one selected file is invalid - do not select any folders.</p><p>Please reselect and try again.</p>");
       return
   }
+  $("#list").hide();
   document.querySelector('.min-loading.blue').classList.remove('loading-hidden') //loading event
   document.querySelector('button#buttonUpload').setAttribute('disabled', '')
   document.querySelector('button#buttonRemote').setAttribute('disabled', '')
@@ -105,9 +107,19 @@ function upload() {
       reader.onloadend = function() {
           ipfsRequest (file.name, buffer.Buffer(reader.result)).then((data) => {
             response.push(data[0])
-            document.querySelector("#response").innerText = JSON.stringify(response, null, 2)
+            var fileName = response[response.length - 1]["path"];
+            var fileHash = "https://ipfs.infura.io/ipfs/" + response[response.length - 1]["hash"];
+            const p = document.createElement('p');
+            p.innerText = `${fileName}`;
+            document.getElementById("divResponse").append(p);
+
+            const a = document.createElement('a');
+            a.innerText = `${fileHash}`;
+            a.setAttribute("href", fileHash);
+            a.setAttribute('target', '_blank');
+            document.getElementById("divResponse").append(a);
+
             updateList(fileChecksum(file), data[0].hash)
-            console.log(data[0].hash)
             uploadCount++
             if (uploadCount == filesOk.length) {
               document.querySelector('.min-loading.blue').classList.add('loading-hidden');  //stop loading event
@@ -120,6 +132,7 @@ function upload() {
       })
     }
   })
+  $("#divResponse").show();
 }
 
 function ipfsRequest (file_name, data) {
@@ -194,7 +207,6 @@ function handleFileSelect(evt) {
 
             filesOk[filesOk.length] = files[i]; //push valid files for filesOk array
         }
-
     }
 
     //reset filesList input
@@ -229,7 +241,6 @@ function resetFiles() {
   response = []
   uploadCount = 0
   document.querySelector("#list").querySelector("ul").innerHTML =  ""
-  document.querySelector("pre#response").innerHTML =  '<spam id="info">Response IPFS API:</spam>'
   document.querySelector('button#buttonUpload').onclick = function(){upload()}
   document.querySelector('button#buttonUpload').innerHTML = 'Upload<img src="img/upload.png">'
 }

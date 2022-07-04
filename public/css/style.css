@@ -33,11 +33,13 @@ html, body {
 
 #left {
 	width: 400px;
+	margin-top: 50px;
 }
 
 #right {
 	width: 400px;
 	margin-top: 50px;
+	display: none;
 }
 
 nav {
@@ -51,69 +53,13 @@ nav {
 	flex-wrap: wrap;
 }
 
-nav ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-wrap: wrap;
-}
-
-nav img {
-	width: 40px;
-}
-
-nav > ul > li {
-	display: inline-block;
-	padding: 25px 1.2em;
-	white-space: nowrap;
-	position: relative;
-}
-
-nav a {
-	color: #92b0b3;
-	text-decoration: none;
-}
-
-nav a:hover {
+.nodeStatusbtn{
+	background:none;
+	border: none;
 	color: white;
-}
-
-nav a:hover > * {
-	fill: white;
-}
-
-nav .svg {
-	fill: #92b0b3;
-	height: 1.2em;
-	width: 1.2em;
-	display: block;
-	float: right;
-}
-
-nav ul ul {
-	display: none;
-	position: absolute;
-	top: 100%; /*sets the top edge of the element above/below top edge of nearest ancestor*/
-}
-
-nav ul li:hover > ul {
-	display: block;
-}
-
-nav ul ul li {
-	float: none;
-	background: rgba(35, 61, 77, 0.81);
-	padding: 10px;
-	text-align: center;
-}
-
-nav ul ul li a {
-	color: #92b0b3;
-}
-
-nav ul ul li a:hover {
-	color: white;
+	margin-top: 10px;
+	border-bottom: 1px solid white;
+	cursor: pointer;
 }
 
 *,
@@ -292,22 +238,11 @@ h1 {
 
 #divResponse {
 	width: 100%;
+	display: none;
 }
 
-#divResponse pre {
-	border-radius: 5px;
-	display: flex;
-	flex-direction: column;
-	color: #333;
-	min-height: 80px;
-	background-color: #f5f5f5;
-	border: 1px solid #ccc;
-	padding: 7px;
-	font-size: 12px;
-	overflow: auto;
-	margin: 30px 0;
-	white-space: pre-wrap;
-	word-break: break-word;
+#divResponse a {
+	color: rgb(165, 82, 204);
 }
 
 .b-nav {
@@ -402,3 +337,4 @@ h1 {
 	background-color: rgb(147, 2, 184);
 	border: none;
 }
+
