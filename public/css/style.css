@@ -42,6 +42,11 @@ html, body {
 	display: none;
 }
 
+#right-reducer{
+	width: 400px;
+    margin-top: 50px;
+}
+
 nav {
 	text-transform: uppercase;
 	color: #92b0b3;
@@ -238,11 +243,25 @@ h1 {
 
 #divResponse {
 	width: 100%;
-	display: none;
 }
 
 #divResponse a {
 	color: rgb(165, 82, 204);
+}
+
+#copyIconbtn{
+	cursor: pointer;
+}
+
+.hashShow{
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	word-break: break-all;
+}
+
+.hashShow span{
+	cursor: pointer;
 }
 
 .b-nav {
@@ -262,8 +281,8 @@ h1 {
 	padding: 1rem;
     border-radius: 5px;
     margin-bottom: 30px;
-    background-color: #a7a7a72e;
-    color: #50a2ab;
+    background-color: #c5efa233;
+    color: #525252;
 }
 
 .widthForm{
@@ -324,7 +343,7 @@ h1 {
 }
 
 #imageUploadforReduce{
-	margin-top: 40px;
+	margin-top: 28px;
 }
 
 .resetBtn{

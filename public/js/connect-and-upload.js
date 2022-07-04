@@ -113,11 +113,26 @@ function upload() {
             p.innerText = `${fileName}`;
             document.getElementById("divResponse").append(p);
 
+            const div = document.createElement('div');
+            div.className = "hashShow";
+
             const a = document.createElement('a');
             a.innerText = `${fileHash}`;
+            a.id = response[response.length - 1]["hash"];
             a.setAttribute("href", fileHash);
-            a.setAttribute('target', '_blank');
-            document.getElementById("divResponse").append(a);
+            a.setAttribute('target', '_blank'); 
+            a.className="hashLinkString";
+
+            const img = document.createElement('img');
+            img.setAttribute("src", "../img/copy-icon.png")
+
+            const span = document.createElement('span');
+            span.appendChild(img);
+            span.setAttribute('onclick', `copyHashLink("${response[response.length - 1]["hash"]}")`);
+
+            div.appendChild(a);
+            div.appendChild(span);
+            document.getElementById("divResponse").append(div);
 
             updateList(fileChecksum(file), data[0].hash)
             uploadCount++
@@ -236,13 +251,15 @@ function fileChecksum(file) {
 }
 
 function resetFiles() {
+  $("#divResponse").empty();
   filesOk = []
   files_checksum = []
   response = []
   uploadCount = 0
   document.querySelector("#list").querySelector("ul").innerHTML =  ""
   document.querySelector('button#buttonUpload').onclick = function(){upload()}
-  document.querySelector('button#buttonUpload').innerHTML = 'Upload<img src="img/upload.png">'
+  document.querySelector('button#buttonUpload').innerHTML = 'Upload<img src="img/upload.png">';
+  $("#list").show();
 }
 
 
@@ -266,3 +283,9 @@ if (!window.FileReader) {
       document.getElementById('files').addEventListener('change', handleFileSelect, false);
 }
 updateNode(node.default)
+
+function copyHashLink(temp) {
+  var copyText = $(`#${temp}`).text();
+  navigator.clipboard.writeText(copyText);
+  console.log("Copied the text: " + copyText);
+}

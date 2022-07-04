@@ -40,7 +40,7 @@
                 <nav>
                     <h1>Upload files to IPFS from Browser</h1>
                 </nav>
-                <button class="nodeStatusbtn" id="nodeStatus">Show Node Status</button>
+                <button class="nodeStatusbtn" id="nodeStatus">Show Node Status </button>
             </div>
             <div>
                 <div id="right">
@@ -202,29 +202,32 @@
                 </nav>
             </div>
             <div id="wrapper-reducer">
-                <div id="right">
+                <div id="right-reducer">
                     <div class="imgSizeBox">
                         Image Size
                         <div class='uploadForm'>
                             <label>
-                                <span>Max Width:</span>
+                                <span>Width:</span>
                                 <input id="widthSize" type="text" class="widthForm" value="800"> 
                             </label>
                             <label>
-                                <span>Max Height:</span>
+                                <span>Height:</span>
                                 <input id="heightSize" type="text" class="widthForm" value="800"> 
                             </label>
                         </div>
                         <hr>
-                        Enter the width, height pixel in above form<br>
+                        Enter the width, height pixel in above form<br><br>
                         Width, Height of images will be reduced up to above number keeping the original rate of width to height
                     </div>
                 </div>
                 <div id="left">
                     <div id="imageUploadforReduce">
+                        <div style="margin-bottom: 100px; width: 400px; height: 200px; border: 1px solid black;">
+                            Drag and Drop
+                        </div>
                         <label>
                             Select media file to compress
-                            <input id="img-input" type="file" accept="image/*,.mp4, .mov, .webm" hidden>
+                            <input id="img-input" type="file" accept="image/*,.mp4, .mov, .webm" hidden multiple>
                         </label>
                     </div>
                     <button class="resetBtn" onclick = reset()>Reset</button>
