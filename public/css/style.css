@@ -352,18 +352,23 @@ h1 {
 }
 
 .downloadbtn{
-	margin-top: 50px;
 	cursor: pointer;
 	background: none;
     border: none;
-    background-color: #349906;
     padding: 1rem;
     border-radius: 5px;
 }
 
-.downloadbtn:hover {
-	color: white;
-	background-color: #34923f;
+.downloadbtn a{
+    border: none;
+    background: none;
+    padding: 0;
+	color: rgb(243, 79, 79);
+	text-decoration: underline;
+}
+
+.downloadbtn a:hover {
+	color: rgb(248, 6, 6);
 }
 
 #imageUploadforReduce label{
@@ -383,13 +388,17 @@ h1 {
 	height: 70px;
 }
 
-#download{
-    border: none;
-    background: none;
-    padding: 0;
-	color: white;
-}
-
 #imageUploadforReduce{
 	margin-top: 40px;
+}
+
+.resetBtn{
+	cursor: pointer;
+	margin-top: 50px;
+	border-radius: 5px;
+	width: 100px;
+	padding: 1rem;
+	color: white;
+	background-color: rgb(147, 2, 184);
+	border: none;
 }
