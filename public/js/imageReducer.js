@@ -22,14 +22,14 @@ input.onchange = function (ev) {
     const canvas = document.createElement("canvas");
     canvas.width = newWidth;
     canvas.height = newHeight;
-    canvas.id = "myCanvas";
+    canvas.id = DownloadFileName;
     const ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0, newWidth, newHeight);
     canvas.toBlob(
       (blob) => {
         // Handle the compressed image. es. upload or save in local state
-        displayInfo('Original file size:', img.width, img.height, "onlyInfo");
-        displayInfo('Compressed file size', newWidth, newHeight, "withDownload");
+        displayInfo('Original file size:', img.width, img.height, "onlyInfo", canvas.id);
+        displayInfo('Compressed file size', newWidth, newHeight, "withDownload", canvas.id);
       },
       MIME_TYPE,
       QUALITY
@@ -59,14 +59,14 @@ function calculateSize(img, maxWidth, maxHeight) {
 
 // Utility functions for demo purpose
 
-function displayInfo(label, w, h, showInfo) {
+function displayInfo(label, w, h, showInfo, canvasID) {
   const p = document.createElement('p');
   p.innerText = `${label} - Width: ${w} Height: ${h}`;
   const button = document.createElement('button');
-  button.setAttribute('onclick','download(this)');
+  button.setAttribute('onclick',`download("${canvasID}")`);
   button.className = "downloadbtn";
   const a = document.createElement('a');
-  a.className="download";
+  a.className = canvasID;
   a.innerText = `Download`;
   button.appendChild(a);
   if(showInfo == "withDownload"){
@@ -75,11 +75,11 @@ function displayInfo(label, w, h, showInfo) {
   document.getElementById('imageUploadforReduce').append(p);
 }
 
-function changeHtmlElementId ()
+function changeHtmlElementId (canvasID)
   {
-     var htmlElement = document.getElementById("myCanvas");
+     var htmlElement = document.getElementById(canvasID);
      htmlElement.id = "myCanvasOld";  // here you can assign new Id
-     var Tag = document.getElementsByClassName("download");
+     var Tag = document.getElementsByClassName(canvasID)
      Tag[0].className = "downloadOld";
   }
 
@@ -90,10 +90,11 @@ function readableBytes(bytes) {
   return (bytes / Math.pow(1024, i)).toFixed(2) + ' ' + sizes[i];
 }
 
-function download() {
-  var Tag = document.getElementsByClassName("download");
-  var imageLink = document.getElementById("myCanvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
-  Tag[0].download = DownloadFileName;
+function download(canvasID) {
+  var Tag = document.getElementsByClassName(canvasID);
+  var imageLink = document.getElementById(canvasID).toDataURL("image/png").replace("image/png", "image/octet-stream");
+  console.log(imageLink)
+  Tag[0].download = canvasID;
   Tag[0].setAttribute("href", imageLink);
-  changeHtmlElementId();
+  changeHtmlElementId(canvasID);
   }
