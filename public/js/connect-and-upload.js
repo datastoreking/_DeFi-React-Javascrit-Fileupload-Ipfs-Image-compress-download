@@ -216,7 +216,7 @@ function handleFileSelect(evt) {
         } else {
             files_checksum[filesOk.length] = fileChecksum(files[i])
             document.querySelector("#list").querySelector("ul").innerHTML += '<li id="' + fileChecksum(files[i]) + '"><strong class="fileName">' +
-            files[i].name + '</strong> <spam class="itemClose"><a class="removeItem" href="#" onclick="removeItem(\''+fileChecksum(files[i])+'\')">&times;</a></spam>' +
+            files[i].name + '</strong> <spam class="itemClose"><a class="removeItem" onclick="removeItem(\''+fileChecksum(files[i])+'\')">&times;</a></spam>' +
             '</a></spam><br> <spam id="fileProperties"> (' + (files[i].type || 'n/a' ) +') - ' +
             files[i].size + ' bytes, last modified: ' + new Date(files[i].lastModified).toLocaleDateString() +'</spam></li>';
 
