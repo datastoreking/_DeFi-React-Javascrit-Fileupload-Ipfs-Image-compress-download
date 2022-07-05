@@ -404,3 +404,9 @@ h1 {
 	margin-bottom: 40px;
 	margin-top: 40px;
 }
+
+.itemClosebtn{
+	margin-left: 20px;
+	color: red !important;
+	cursor: pointer;
+}
