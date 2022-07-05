@@ -278,14 +278,16 @@ h1 {
 }
 
 .imgSizeBox{
+	height: 200px;
 	padding: 1rem;
     border-radius: 5px;
     margin-bottom: 30px;
-    background-color: #c5efa233;
+    background-color: #abe37d94;
     color: #525252;
 }
 
 .widthForm{
+	border-radius: 30px;
 	background-color: white;
 	margin-left: 30px;
 	color: #333;
@@ -325,30 +327,14 @@ h1 {
 	color: rgb(248, 6, 6);
 }
 
-#imageUploadforReduce label{
-	cursor:pointer;
-	background: #c35b2a;
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-    border-radius: 5px;
-    padding: 2rem;
-	margin-bottom: 100px;
-}
-
-#imageUploadforReduce canvas{
+#reduceBox canvas{
 	margin-top: 50px;
 	width: 200px;
 	height: 70px;
 }
 
-#imageUploadforReduce{
-	margin-top: 28px;
-}
-
-.resetBtn{
+.resetBtn, .compressBtn{
 	cursor: pointer;
-	margin-top: 50px;
 	border-radius: 5px;
 	width: 100px;
 	padding: 1rem;
@@ -357,3 +343,64 @@ h1 {
 	border: none;
 }
 
+.compressBtn{
+	background-color: rgb(219, 82, 3);
+}
+
+.imageuploadforReduce{
+	padding: 20px;
+    width: 400px;
+    height: 200px;
+    border: none;
+    background-color: rgb(86 107 253);
+    border-radius: 5px;
+}
+
+.imageuploadforReduce p{
+	color: white;
+}
+
+.imageuploadforReduce label{
+	cursor: pointer;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: #fff;
+    padding: 6px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.compress-reduce-btnBar{
+	margin-top: 20px;
+	display: flex;
+	gap: 15px;
+	flex-direction: row-reverse;
+}
+
+.compressWorkBox{
+	width: 400px;
+	margin-bottom: 30px;
+}
+
+.compressWorkBox ul{
+	padding: 0;
+}
+
+.compressWorkBox ul li{
+	margin-top: 10px;
+	list-style: none;
+    text-align: left;
+    border: 1px solid #cdcdcd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.resultShow canvas{
+	width: 350px;
+}
+
+.eachImg-compressed{
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
