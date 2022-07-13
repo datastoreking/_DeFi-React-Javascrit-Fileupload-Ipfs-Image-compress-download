@@ -159,7 +159,7 @@ function compress() {
       div.append(p);
 
       const p1 = document.createElement('p');
-      p1.innerText = `Original file size: - Width: ${newWidth} Height: ${newHeight}`;
+      p1.innerText = `Compressed file size: - Width: ${newWidth} Height: ${newHeight}`;
 
       const button = document.createElement('button');
       button.setAttribute('onclick',`download("${canvas.id}")`);
