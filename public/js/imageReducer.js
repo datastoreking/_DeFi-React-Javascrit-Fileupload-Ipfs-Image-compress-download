@@ -102,7 +102,7 @@ document.getElementById('img-browse').addEventListener('change', handleFileSelec
 
 function download(canvasID) {
   var Tag = document.getElementsByClassName(canvasID);
-  var imageLink = document.getElementById(canvasID).toDataURL("image/png").replace("image/png", "image/octet-stream");
+  var imageLink = document.getElementById(canvasID).toDataURL("image/jpeg", 0.3).replace("image/png", "image/octet-stream");
   Tag[0].download = canvasID;
   Tag[0].setAttribute("href", imageLink);
   changeHtmlElementId(canvasID);
